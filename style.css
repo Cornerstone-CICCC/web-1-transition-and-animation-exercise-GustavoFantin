@@ -1,0 +1,77 @@
+.ball {
+    width: 150px;
+    height: 150px;
+    background-color: yellow;
+    border-radius: 50%;
+    opacity: 100%;
+    transition-property: opacity;
+    transition-duration: 2s;
+    animation: moving 5s linear infinite;
+    position: absolute
+}
+
+.ball:hover {
+    transition-property: opacity;
+    opacity: 0%;
+}
+
+.loading {
+    width: 200px;
+    height: 30px;
+    background-color: #ddd;
+    margin: 45vh;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding: 1px
+}
+
+.progress {
+    width: 180px;
+    height: 20px;
+    background-color: lime;
+    overflow: hidden;
+    animation: loader 5s linear infinite;
+}
+
+@keyframes moving {
+
+    0%,
+    100% {
+        border-radius: 50%;
+        top: 0%;
+        left: 0;
+        transform: translateX(0) translateY(0)
+    }
+
+    25% {
+        border-radius: 0%;
+        top: 0%;
+        left: calc(100% - 300px);
+        transform: translateX(100%) translateY(0)
+    }
+
+    50% {
+        border-radius: 50%;
+        top: calc(100% - 300px);
+        left: calc(100% - 300px);
+        transform: translateX(100%) translateY(100%)
+    }
+
+    75% {
+        border-radius: 0%;
+        top: calc(100% - 300px);
+        left: 0;
+        transform: translateX(0) translateY(100%)
+    }
+}
+
+@keyframes loader {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
